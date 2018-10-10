@@ -1,43 +1,46 @@
-# String Matching with Regular Expressions
+# Регулярные выражения
 
-## Summary
-In this challenge we'll be working with Ruby's [`String`](http://ruby-doc.org/core-2.1.0/String.html) and [`Regexp`](http://ruby-doc.org/core-1.9.3/Regexp.html) classes.  More specifically, we'll be searching strings for specific patterns of characters, which we'll be defining as regular expressions.
+## Введение
 
-The Ruby `String` class defines over 100 public methods that give Ruby programmers remarkable power to process, manipulate, and transform textual data.  About a dozen of these string methods can be used with regular expressions in order to allow for high-powered string matching.
+В этой задаче мы будем работать со строками и `Regexp`. Если говорить более конкретно, то мы будем проверять строки на их соответствие определенным символьным шаблонам, которые мы будем определять через регулярные выражения.
 
-What do we mean by high-powered string matching?  Let's begin by looking at an example of low-powered string matching. If we're on a webpage, we can use our browser's search functionality (⌘f on a Mac) to search for a specific word within the page's text. This search is limited because we need to input the exact characters that we're looking for.
+Класс строки определяет более 100 общедоступных методов, которые дают программистам замечательную возможность обрабатывать, манипулировать и преобразовывать текстовые данные. Около дюжины этих строковых методов могут использоваться с регулярными выражениями для того, чтобы обеспечить высокопроизводительное нахождение соответствующих строк.
 
-What if we wanted to search for something less specific?  Any phone number, or any e-mail address on the page? We wouldn't know the exact digits of any phone number that might be on the page, but we could guess that an American phone number would probably contain 10 digits, probably divided into groups of three, three, and four digits.  This is the type of high-powered matching that regular expressions offer and which we'll be exploring in this challenge.
+Что мы понимаем под нахождением соответствующих(сопоставлением) строк? Давайте начнем с примера низкоуровневого сопоставления строк. Если мы находимся на веб-странице, мы можем использовать функцию поиска нашего браузера (⌘f на Mac) для поиска определенного слова в тексте страницы. Этот поиск ограничен, потому что нам нужно вводить точные символы, которые мы ищем.
 
+Что делать, если мы хотим найти что-то менее конкретное? Любой номер телефона или любой адрес электронной почты на странице? Мы не знали бы точных цифр любого номера телефона, который мог бы быть на странице, но мы могли догадаться, что американский номер телефона, вероятно, будет содержать 10 цифр, вероятно, разделенных на группы по 3, 3 и 4 цифры. Это пример возможностей, предлагаемых регулярными выражениями.
 
-### Troubleshooting Regular Expressions
-Sometimes we think that we've defined a regular expression to match a specific pattern, but when we use it, we realize that there's a bug.  Fortunately, there are many resources available online to help us.  [Rubular](http://rubular.com) is a great online Ruby regular expression editor we can use to develop and debug our regular expressions.
+### Устранение неполадок в регулярных выражениях
 
-We can also refer to the [Pickaxe Guide](http://www.ruby-doc.org/docs/ProgrammingRuby/html/language.html#UJ) or this [regular expressions overview](http://www.bluebox.net/about/blog/2013/02/using-regular-expressions-in-ruby-part-1-of-3/) if we get stuck.
+Иногда мы думаем, что мы определили регулярное выражение, которое соответствует определенному шаблону, однако когда мы его используем, мы понимаем, что оно содержит ошибку. К счастью, есть много ресурсов, доступных в Интернете, которые призваны помочь нам решить эту задачу. Например, [regex101] (https://regex101.com/) - отличный редактор регулярных выражений, который мы можем использовать для разработки и отладки наших регулярных выражений.
 
 
 ## Releases
-### Pre-release:  Organization
-We'll be writing our code in the file `social_security_numbers.rb`.  A handful of empty method definitions have been provided, and we'll build each of these methods out during this challenge.  Tests for each method have been provided in the file `spec/social_security_numbers_spec.rb`.
+
+### Pre-release: Организация
+
+Мы будем писать наш код в файле `social_security_numbers.js`. Нам было предоставлено несколько пустых определений методов, и мы построим каждый из этих них в процессе решения этой задачи.
+
+### Release 0: Идентификация номера социального страхования
+
+В этой задаче мы будем работать с номерами социального обеспечения. Мы начнем с вопроса о том, можем ли мы найти номер социального страхования в данной строке. Давайте построим метод `hasSsn`, Чтобы он выводил `true` в том случае, если указанная строка содержит номер социального страхования, и `false` в противном случае (см. Тесты).
+
+Как мы определим, как выглядит номер социального страхования? Есть ли образец того, как этот номер записывается? Какие строчные методы кажутся подходящими для установления такого соответствия?
 
 
-### Release 0: Identifying a Social Security Number
-In this challenge we'll be working with Social Security Numbers.  We'll begin by reporting whether or not we can find a social security number in a given string.  Let's build out the method `has_ssn?` so that it returns `true` if a given string contains a social security number and `false` otherwise (see the tests).
+### Release 1: Другие методы
 
-How will we define what a Social Security Number looks like?  Is there a pattern to the way they're written?  Which string methods seem appropriate for such matching?  If we need to, we should browse the `String` class [docs](http://www.ruby-doc.org/core-1.9.3/String.html) to find an appropriate method.
-
-
-### Release 1: The Other Methods
-We'll now define the rest of the methods until all of the tests pass.  For each of the methods we'll be writing, there is a specific string method that will help us to achieve the behavior defined by the tests.  Let's read through the docs and select the most appropriate methods we can find.
+Теперь мы определим остальные методы до тех пор, пока все тесты не будут выполнены. Для каждого из методов, которые мы будем писать, существует определенный строчный метод, который поможет нам достичь поведения, определенного в тестах. Давайте прочитаем документы и выберем наиболее подходящие методы, которые мы только сможем найти.
 
 
-### Release 2: Improve Test Coverage
-Tests provide us with valuable feedback on whether or not our methods are behaving as we expect.  However, sometimes our code works only as well as our tests.
+### Release 2: Улучшение тестового покрытия
 
-As we were working through the methods in this challenge, we encountered the `format_ssns` method which requires us to match Social Security Numbers in different formats:  *123456789*, *123.45.6789*, and *123--45--6789*.  However, the tests for our `has_ssn?` method only test that the method finds Social Security Numbers in the format *123-45-6789*.  Is that acceptable, or should it also find Social Security Numbers in other formats?
+Тесты дают нам ценную обратную связь о том, работают ли наши методы должным образом. Однако иногда наш код работает только так же, как и наши тесты.
 
-Read through the test suite and add additional tests to make us feel more comfortable that our methods are behaving the way we want.  For instance, what do we want to happen when we pass a string with only a single Social Security Number into the `hide_all_ssns` or `get_all_ssns` methods?
+Когда мы работали над методами этой задачи, то мы столкнулись с методом `formatSsns`, который требует от нас сопоставления номеров социального страхования в разных форматах: *123456789*, *123.45.6789* и *123--45--6789* , Тем не менее, тесты для нашего метода `hasSsn` проверяют только то, что метод находит номера социального обеспечения в формате *123-45-6789*. Приемлемо ли это, или же метод должен также находить номера социального страхования в других форматах?
 
+Прочтите весь тестовый комплект и проведите дополнительные тесты для того, чтобы удостовериться в том, что наши методы работают как надо. Например, что нам нужно делать, когда мы передаем строку с единственным номером социального обеспечения в методы `hideAllSsns` или` getAllSsns`?
 
-## Conclusion
-Did a user register for our site with what appears to be a real e-mail address?  What about a real phone number?  Can we find all of the links in that HTML?  Regular expressions and the string methods that utilize them are powerful tools.  Being comfortable with them and knowing when it's appropriate to use them will help us write concise, readable code when dealing with text.
+## Выводы
+
+Зарегистрировался ли пользователь на нашем сайте, используя свой настоящий адрес электронной почты? А как насчет реального номера телефона? Можем ли мы найти все ссылки в этом HTML? Регулярные выражения и строчные методы, которые их используют, являются очень мощными инструментами. Умение с ними работать и знание того, когда их целесообразно использовать, помогут нам в написании сжатого, читаемого кода при работе с текстом.
