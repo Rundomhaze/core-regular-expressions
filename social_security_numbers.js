@@ -4,7 +4,6 @@
 
 // # Determine whether a string contains a Social Security Number.
 function hasSsn(string) {
-  return true 
 }
 
 
