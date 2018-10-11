@@ -4,13 +4,12 @@
 
 // # Determine whether a string contains a Social Security Number.
 function hasSsn(string) {
-
+  return true 
 }
 
 
 // # Find and return a Social Security Number.
 function grabSsn(string) {
-
 }
 
 
