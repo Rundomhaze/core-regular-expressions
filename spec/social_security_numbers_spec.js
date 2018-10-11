@@ -16,12 +16,5 @@ describe('grab_ssn', () => {
 describe('returns the first SSN it finds', () => {
   let ssn = grab_ssn('The numbers are 350-80-0744, 234-60-1422, and 013-60-8762')
   test('returns false if it does not find an SSN', () => expect(has_ssn("The number is XXX-XX-1422")).toEqual("350-80-0744"));
-});
-
-describe('returns the first SSN it finds', () => {
-    test('returns the first SSN it finds')
-      ssn = grab_ssn('The numbers are 350-80-0744, 234-60-1422, and 013-60-8762')
-      expect(ssn).to eq '350-80-0744'
-    end
 
 });
