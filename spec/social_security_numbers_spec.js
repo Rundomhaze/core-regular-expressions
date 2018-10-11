@@ -1,4 +1,3 @@
-require_relative('../social_security_numbers')
 
 describe 'has_ssn?' do
   it 'returns true if it finds an SSN' do
