@@ -1,11 +1,4 @@
 
-// describe ('A suite', () => {
-//   it('works', () => {
-//     expect(true).toBe(true)
-//   })
-// })
-
-
 describe ('hasSsn', () => {
   it('returns true if it finds an SSN', () => {
     expect(hasSsn('The number is 234-60-1422')).toBe(true)
