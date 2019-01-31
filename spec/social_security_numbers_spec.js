@@ -27,9 +27,9 @@ describe ('grabAllSsns', () => {
     expect(allSsns).toEqual(['350-80-0744', '234-60-1422', '013-60-8762'])
   })
 
-  it('returns an empty collection if does not find any SSNs', () => {
+  it('returns null if does not find any SSNs', () => {
     let allSsns = grabAllSsns('The number is XXX-XX-1422');
-    expect(allSsns).toBeEmpty()
+    expect(allSsns).toBeNull()()
   })
 })
 
