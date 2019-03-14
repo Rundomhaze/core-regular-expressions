@@ -29,7 +29,7 @@ describe ('grabAllSsns', () => {
 
   it('returns null if does not find any SSNs', () => {
     let allSsns = grabAllSsns('The number is XXX-XX-1422');
-    expect(allSsns).toBeNull()()
+    expect(allSsns).toBeNull()
   })
 })
 
