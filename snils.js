@@ -3,7 +3,7 @@
 
 
 // Определи, есть ли во входной строке номер СНИЛС.
-function hasSsn(string) {
+function hasSNILS(string) {
 }
 
 
