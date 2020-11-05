@@ -1,4 +1,4 @@
-// Изучи тесты `spec/SNILS_spec.js`
+// Изучи тесты `spec/snils.spec.js`
 // Чтобы понимать как должны работать твои методы.
 
 
@@ -30,3 +30,11 @@ function hideAllSNILS(string) {
 function formatSNILS(string) {
 
 }
+
+module.exports = {
+  hasSNILS,
+  grabSNILS,
+  grabAllSNILS,
+  hideAllSNILS,
+  formatSNILS
+};
