@@ -1,47 +1,46 @@
-## Регулярные выражения
+## Regular expressions
 
-В этой задаче ты будешь работать со строками и `RegExp`. Если говорить более конкретно, то ты будешь проверять строки на их соответствие определенным символьным шаблонам, которые будут определяться через регулярные выражения.
+In this exercise, you will work with strings and `RegExp`. More specifically, you will check strings against certain character patterns, which will be determined through regular expressions.
 
-У строк есть большое количество общедоступных методов, которые дают программистам замечательную возможность обрабатывать, манипулировать и преобразовывать текстовые данные. Около дюжины этих строковых методов могут использоваться с регулярными выражениями для того, чтобы обеспечить высокопроизводительное нахождение соответствующих строк.
+Strings have a large number of available methods that give developers a wonderful ability to process, manipulate, and transform text data. About a dozen of these string methods can be used with regular expressions to provide high-performance matching of strings.
 
-Что мы понимаем под нахождением соответствующих (сопоставлением) строк? Давай начнем с примера низкоуровневого сопоставления строк. Если ты находишься на веб-странице, ты можешь использовать функцию поиска своего браузера (ctrl+f / ⌘f) для поиска определенного слова в тексте страницы. Этот поиск ограничен, потому что тебе нужно вводить точные символы, которые ты ищешь.
+What do we mean by finding matching strings? Let's start with an example of low-level string matching. If you are on a web page, you can use your browser's search option (ctrl + f / ⌘f) to search for a specific word on the page. This search is limited because you need to enter the exact characters you are looking for.
 
-Что делать, если ты хочешь найти что-то менее конкретное? Любой номер телефона или любой адрес электронной почты на странице? Ты не знаешь точных цифр любого номера телефона, который мог бы быть на странице, но ты можешь догадаться, что российский номер телефона, вероятно, будет содержать `+7` и 10 цифр, вероятно, разделенных на группы по 3-3-2-2 цифры. Это пример возможностей, предлагаемых регулярными выражениями.
+What if you want to find something less specific? Any phone number or any email address on the page? You do not know the exact digits of any phone number that could be on the page, but you can guess that the Russian phone number will probably contain `+7` and 10 digits, and probably will be divided into groups of 3-3-2-2 digits ... This is an example of the possibilities offered by regular expressions.
 
-## Устранение неполадок в регулярных выражениях
+## Dealing with problems when working with regular expressions
 
-Иногда можно подумать, что мы определили регулярное выражение, которое соответствует определенному шаблону, однако когда мы его используем, мы понимаем, что оно содержит ошибку. К счастью, есть много ресурсов, доступных в Интернете, которые призваны помочь нам решить эту задачу. Например, [regex101](https://regex101.com/) - отличный редактор регулярных выражений, который ты можешь использовать для разработки и отладки своих регулярных выражений.
+Sometimes you might think that we have defined a regular expression that matches a certain pattern, but when we use it, we realize that it contains an error. Fortunately, there are many resources available on the Internet to help us meet this challenge. For example, [regex101](https://regex101.com/) is a great regular expression editor that you can use to develop and debug your regular expressions.
 
-## Тестирование функций
+## Testing functions
 
-Мы написали тесты для проверки функций. Твоя задача добиться прохождения всех тестов. Тесты находятся в папке spec. Изучи их.  
-Но перед тем как пользоваться ими, неплохо установить их командой  
+We have written tests to check the functions. Your task is to get all the tests passed. The tests are in the folder Spec. Study them.
+But before using them, it's a good idea to install them with the command
 `npm install`
 
-Чтобы запустить - набирай  
+To run them - enter
 `npm test`
 
-### Pre-release. Организация
+### Pre-release. Preparation
 
-Ты будешь писать свой код в файле `snils.js`. Тебе уже предоставлены необходимые функции, но они пусты. Твоя задача заключается в том, чтобы заполнить каждую из них в процессе решения задачи.
+You will write your code in `snils.js` file. You have already been provided with the required functions, but they are empty. Your task is to fill in each of them in the process of solving the problem.
 
-### Release 0. Идентификация СНИЛС.
+### Release 0. SNILS identification.
 
-В этой задаче ты будешь работатьс номерами СНИЛС. Напиши функцию `hasSNILS` так, чтобы она выводила `true` в том случае, если указанная строка содержит СНИЛС, и `false` в противном случае (см. тесты).
+In this exercise you will work with SNILS numbers. Write the `hasSNILS` function so that it outputs `true` if the specified string contains SNILS, and `false` otherwise (see tests).
 
-### Release 1. Другие функции.
+### Release 1. Other functions.
 
-Теперь реализуй остальные функции. Все тесты должны проходить. 
-На каждую реализованную функцию создавай отдельный коммит.
+Now write the rest of the functions. All tests must pass. Create a separate commit for each written function.
 
 ### Release 2. Улучшение тестового покрытия
 
-Тесты дают нам ценную обратную связь о том, работают ли наши функции должным образом. Однако иногда код проходит тесты, но работает неверно.
+Tests give us valuable feedback on whether our features work as expected. However, sometimes the code we write passes the tests but does not work correctly.
 
-Когда ты работал(а) над функциями этой задачи, то ты столкнулся(ась) с функцией `formatSNILS`, которыая требует сопоставления СНИЛС в разных форматах: *12345678900*, *123.456.789.00* и *123--456--789 00* . Тем не менее, тесты для функции `hasSNILS` проверяют только то, что она находит номера социального обеспечения верного формата *123-456-789 00*. Достаточно ли такой проверки, или же функция должна также находить СНИЛС в других форматах?
+When you worked on the functions in this exercise, you came across the `formatSNILS` function, which requires matching SNILS in different formats: *12345678900*, *123.456.789.00* and *123--456--789 00*. However, the tests for the hasSNILS function only check that it finds social security numbers in the correct format *123-456-789 00*. Is this check enough, or should the function also find SNILS in other formats?
 
-Прочти весь тестовый комплект и допиши дополнительные тесты для того, чтобы удостовериться в том, что твои функции работают как надо. Например, что тебе нужно делать, когда ты передаешь строку с единственным СНИЛС в функции `hideAllSNILS` или` grabAllSNILS`?
+Add additional tests to make sure your functions work as expected. For example, what do you need to do when you pass a string with a single SNILS in the `hideAllSNILS` or `grabAllSNILS` function?
 
-## Выводы
+## Conclusion
 
-Зарегистрировался ли пользователь на твоем сайте, используя свой настоящий адрес электронной почты? А как насчет реального номера телефона? Можешь ли ты найти все ссылки в этом HTML? Регулярные выражения и строчные методы, которые их используют, являются очень мощными инструментами. Умение с ними работать поможет тебе в написании сжатого, читаемого кода при работе с текстом.
+Has a user registered on your website using their real email address? What about a real phone number? Can you find all the links in this HTML? Regular expressions and the string methods that use them are very powerful tools. Knowing how to work with them will help you write concise, readable code when working with text.
